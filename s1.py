@@ -47,7 +47,6 @@ while game:
     for e in event.get():
         if e.type == QUIT:
             game = False
-            window.fill(back)
     if finish != True:
         window.fill(back)
         ball.update() 
