@@ -36,13 +36,22 @@ display.set_caption("Пинг-Понг")
 window.fill(back)
 
 game = True
+finish = False
 clock = time.Clock()
 FPS = 60
+
+#Создание мяча:
+ball = Player('png-clipart-football-football.png', 200, 200, 65, 40, 40)
 
 while game:
     for e in event.get():
         if e.type == QUIT:
             game = False
+            window.fill(back)
+    if finish != True:
+        window.fill(back)
+        ball.update() 
+        ball.reset()
 
     display.update()
     clock.tick(FPS)
